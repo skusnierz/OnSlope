@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-slopesList',
+  selector: 'slopesList',
   templateUrl: './slopesList.component.html',
   styleUrls: ['./slopesList.component.css']
 })
 export class SlopesListComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    let slopesList: String[] = ['Zakopane', 'Krakow'];
+   }
 
   ngOnInit() {
+
   }
 
 }
