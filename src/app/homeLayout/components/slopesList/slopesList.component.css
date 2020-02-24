@@ -1,0 +1,20 @@
+.grid {
+    padding-bottom: 5px;
+}
+
+.card {
+    margin: auto;
+    align-items: center;
+    background-color: #101010;
+}
+
+h5 {
+    color: white;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}

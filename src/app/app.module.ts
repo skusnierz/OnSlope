@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularWeatherWidgetModule, WeatherApiName } from 'angular-weather-widget';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
    declarations: [
@@ -23,8 +25,10 @@ import { AngularWeatherWidgetModule, WeatherApiName } from 'angular-weather-widg
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       AppRoutingModule,
       FontAwesomeModule,
+      NgxPaginationModule,
       AngularWeatherWidgetModule.forRoot({
          key: '324b4cddbd3fb6d4f421e721e2b3feb9',
          name: WeatherApiName.OPEN_WEATHER_MAP,

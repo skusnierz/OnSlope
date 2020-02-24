@@ -1,0 +1,12 @@
+<div class="grid">
+    <div [@listAnimation]="6" class="row col-centered mt-5 ml-5 mr-5 mb-5">
+        <div *ngFor="let item of items" class="col-lg-4 col-md-6 col-sm-12">
+            <div class="mt-2 mb-2 card">
+                <weather-widget [settings]="settings"></weather-widget>
+                <div class="card-body">
+                    <h5 class="card-title">Chuj, nie stok</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
