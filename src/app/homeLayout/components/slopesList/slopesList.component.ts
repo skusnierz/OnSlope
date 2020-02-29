@@ -1,3 +1,4 @@
+import { Slope } from './../../../core/interfaces/slope';
 import { Component, OnInit } from '@angular/core';
 import { WeatherSettings, TemperatureScale, ForecastMode, WeatherLayout } from 'angular-weather-widget';
 import { trigger, transition, style, animate, query, stagger } from '@angular/animations';
@@ -25,33 +26,23 @@ const listAnimation = trigger('listAnimation', [
 
 export class SlopesListComponent implements OnInit {
   p: number = 1;
-  items = [0, 1, 2, 3, 4, 5, 6];
-  settings: WeatherSettings = {
-    location: {
-      cityName: 'Podstolice'
-    },
-    backgroundColor: '#101010',
-    color: '#ffffff',
-    width: '200px',
-    height: 'auto',
-    showWind: false,
-    scale: TemperatureScale.CELCIUS,
-    forecastMode: ForecastMode.GRID,
-    showDetails: false,
-    showForecast: false,
-    layout: WeatherLayout.WIDE,
-    language: 'en'
-  };
+
+  slopesList: Array<Slope> = [
+    {name: 'Jaworzyna Krynicka', location: 'Krynica-Zdroj'},
+    {name: 'Kotelnica Białczańska', location: 'Białka Tatrzańska'},
+    {name: 'Kaniówka Stacja Narciarska', location: 'Białka Tatrzańska'},
+    {name: 'Nosal - Wyciąg Narciarski', location: 'Zakopane'},
+    {name: 'Rusin-Ski', location: 'Bukowina Tatrzańska'},
+    {name: 'Palenica Stok Narciarski', location: 'Szczawnica'},
+    {name: 'Suche Ośrodek Narciarski Wyciągi', location: 'Poronin'},
+    {name: 'Czorsztyn-Ski', location: 'Kluszkowce'},
+    {name: 'Stacja Narciarska Małe Ciche', location: 'Murzasichle'},
+    {name: 'Olczań-Ski', location: 'Bukowina Tatrzańska'},
+  ];
 
   constructor() {
-    let slopesList: string[] = ['Zakopane', 'Krakow'];
    }
 
   ngOnInit() {
-
-  }
-
-  refresh() {
-    console.log('marcin');
   }
 }

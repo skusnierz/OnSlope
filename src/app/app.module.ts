@@ -1,3 +1,5 @@
+import { WeatherWidgetComponent } from './homeLayout/components/slopesList/components/weatherWidget/weatherWidget.component';
+import { FilterComponent } from './homeLayout/components/filter/filter.component';
 import { SlopesListComponent } from './homeLayout/components/slopesList/slopesList.component';
 import { NavBarComponent } from './homeLayout/components/navBar/navBar.component';
 import { HomeComponent } from './homeLayout/home.component';
@@ -21,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       RegisterComponent,
       HomeComponent,
       NavBarComponent,
-      SlopesListComponent
+      SlopesListComponent,
+      FilterComponent,
+      WeatherWidgetComponent
    ],
    imports: [
       BrowserModule,

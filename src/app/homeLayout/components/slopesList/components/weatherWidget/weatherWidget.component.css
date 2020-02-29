@@ -1,0 +1,10 @@
+.card {
+    margin: auto;
+    align-items: center;
+    background-color: #202020;
+    height: 436px
+}
+
+h5 {
+    color: white;
+}

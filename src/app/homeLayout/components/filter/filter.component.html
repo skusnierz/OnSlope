@@ -1,0 +1,12 @@
+<div class="row ml-1 mt-2">
+    <button [@fadeAnimation] *ngIf="!filterIsHidden" type="button" (click)="toggleFilter()" class="btn btn-secondary">Filter <i class="fas fa-arrow-down"></i></button>
+
+    <div [@fadeAnimation] *ngIf="filterIsHidden" class="bg-secondary">
+        <i (click)="toggleFilter()" class="fas fa-times ml-1"> </i>
+        <div class="container center">
+
+            asdasdasdasdasdasd
+
+        </div>
+    </div>
+</div>
