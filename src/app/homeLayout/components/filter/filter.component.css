@@ -2,3 +2,9 @@
     width: 100%;
     margin-right: 15px;
 }
+
+.search-hero {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin: auto;
+}

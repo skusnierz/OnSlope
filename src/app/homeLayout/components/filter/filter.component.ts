@@ -1,5 +1,7 @@
+import { FilterService } from '../../../core/services/filterSlopes.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, query, style, animate, transition } from '@angular/animations';
+import { Subscription } from 'rxjs';
 
 export const fadeAnimation = trigger('fadeAnimation', [
   transition(':enter', [
@@ -19,13 +21,22 @@ export const fadeAnimation = trigger('fadeAnimation', [
 
 export class FilterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private filter: FilterService
+  ) { }
+  subscription: Subscription;
+  slopes: any[] = [];
   filterIsHidden = false;
+  searchText;
 
   ngOnInit() {
+    this.subscription = this.filter.getSlopeList().subscribe( slopes => this.slopes = slopes);
+    this.filter.updateSlopeList(this.slopes);
+    console.log(this.slopes);
   }
 
   toggleFilter() {
     this.filterIsHidden = !this.filterIsHidden;
   }
 }
+

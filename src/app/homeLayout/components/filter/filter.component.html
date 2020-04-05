@@ -3,10 +3,8 @@
 
     <div [@fadeAnimation] *ngIf="filterIsHidden" class="bg-secondary">
         <i (click)="toggleFilter()" class="fas fa-times ml-1"> </i>
-        <div class="container center">
-
-            asdasdasdasdasdasd
-
+        <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a slope">
         </div>
     </div>
 </div>
