@@ -21,7 +21,7 @@ import { AngularWeatherWidgetModule, WeatherApiName } from 'angular-weather-widg
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import { FormsModule } from '@angular/forms';
       baseUrl: 'http://api.openweathermap.org/data/2.5'
     }),
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: APOLLO_OPTIONS,

@@ -16,18 +16,26 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form [formGroup]="LoginForm">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="email">
+                            <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="email" formControlName="email" [ngClass]="{ 'is-invalid': formSubmitAttempt && f.email.errors }" required>
+                            <div *ngIf="f.email.errors" class="invalid-feedback text-light">
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                            </div>
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="password">
+                            <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="password" formControlName="password" [ngClass]="{ 'is-invalid': formSubmitAttempt}" required>
+                            <div *ngIf="formSubmitAttempt" class="invalid-feedback text-light">
+                                <div *ngIf="invalidData">Password or Email is invalid</div>
+                                <div *ngIf="f.password.errors && f.password.errors.required">Password is required</div>
+                            </div>
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox">Remember Me

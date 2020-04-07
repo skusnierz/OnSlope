@@ -16,6 +16,7 @@ export class LoginService {
   ) { }
 
   async login(email: string, password: string) {
+    let invalidLogin = true;
     await this.apollo.mutate({
       mutation: this.queriesLoginService.login,
       variables: {
@@ -24,10 +25,12 @@ export class LoginService {
       }
     }).toPromise().then(({ data }) => {
       console.log('Login successful', data);
+      invalidLogin = false;
+      this.router.navigate(['home']);
     }, (error) => {
       console.log('Error during : Login!!', error);
     });
-    this.router.navigate(['home']);
+    return invalidLogin;
   }
 
   logout() {
