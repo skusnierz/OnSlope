@@ -57,7 +57,8 @@ import { FormsModule } from '@angular/forms';
       return {
         cache: new InMemoryCache(),
         link: httpLink.create({
-          uri: 'http://localhost:4000/graphql'
+          uri: 'http://localhost:4000/graphql',
+          withCredentials: true
         })
       };
     },

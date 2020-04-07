@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { UserService } from './core/services/user/user.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'onSlopeApp';
+export class AppComponent implements OnInit{
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+  }
+
 }

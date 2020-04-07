@@ -32,7 +32,6 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
     this.subscription = this.filter.getSlopeList().subscribe( slopes => this.slopes = slopes);
     this.filter.updateSlopeList(this.slopes);
-    console.log(this.slopes);
   }
 
   toggleFilter() {

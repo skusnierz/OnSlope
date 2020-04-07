@@ -1,3 +1,4 @@
+import { UserService } from './../core/services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    console.log(window.screen.width);
   }
+
 }
