@@ -1,4 +1,4 @@
-import { FilterService } from '../../../core/services/filterSlopes.service';
+import { FilterService } from '../../../core/services/filter/filterSlopes.service';
 import { Component, OnInit } from '@angular/core';
 import { trigger, query, style, animate, transition } from '@angular/animations';
 import { Subscription } from 'rxjs';

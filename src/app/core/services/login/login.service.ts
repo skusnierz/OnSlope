@@ -1,7 +1,7 @@
-import { QueriesLoginService } from './queriesLogin.service';
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Router } from '@angular/router';
+import gql from 'graphql-tag';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +9,30 @@ import { Router } from '@angular/router';
 
 export class LoginService {
 
+  private loginQuery = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      username,
+      id
+    }
+  }
+`;
+
+private logoutQuery = gql`
+  mutation logout {
+    logout
+  }
+`;
+
   constructor(
     private apollo: Apollo,
-    private queriesLoginService: QueriesLoginService,
     private router: Router
   ) { }
 
   async login(email: string, password: string) {
     let invalidLogin = true;
     await this.apollo.mutate({
-      mutation: this.queriesLoginService.login,
+      mutation: this.loginQuery,
       variables: {
         email,
         password
@@ -35,7 +49,7 @@ export class LoginService {
 
   logout() {
     this.apollo.mutate({
-      mutation: this.queriesLoginService.logout,
+      mutation: this.logoutQuery,
     }).subscribe(({ data }) => {
       console.log('Logout successful', data);
     }, (error) => {

@@ -1,4 +1,4 @@
-import { Slope } from '../interfaces/slope';
+import { Slope } from '../../interfaces/slope';
 import { Injectable } from '@angular/core';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 
